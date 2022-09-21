@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import include, path
 from . import views
 
+app_name="wiki"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('wiki/', include("encyclopedia.urls")),
+    path('wiki/', include("encyclopedia.urls"),name="index"),
     path('',views.to_main_page)
 ]

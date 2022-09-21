@@ -14,13 +14,14 @@ def index(request):
     })
 def to(request,name):
     check= util.get_entry(name);
+    tmp="hsdfjhsdfhsdf"
     if (check==None):
         return render(request, "encyclopedia/error.html")
         # HttpResponse("Hello???")
         # time.sleep(2)
         # return to_main_page
     else :  
-        return render(request,f"entries/{name}.md")
-        
-
-
+        # return HttpResponse(f"Hello,{type(tmp)}")
+        return render(request,"encyclopedia/test.html",{
+            "val":check,"name":name.upper()
+        })        
