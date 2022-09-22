@@ -21,6 +21,6 @@ app_name="wiki"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('wiki/', include("encyclopedia.urls"),name="index"),
+    path('wiki/', include("encyclopedia.urls")),
     path('',views.to_main_page)
 ]
