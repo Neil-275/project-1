@@ -1,10 +1,30 @@
-{% load markdownify %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <Title>{{name}}</Title>
-    </head>
-    <body>
+{% extends "encyclopedia/layout.html" %}
+{% load markdownify %} 
+        {% block title %}
+            {{name}}
+        {% endblock %}
+        
+        {% block body %}
+        <style>
+            .a{
+                text-align: right;
+            }
+            .tmp{
+                display: inline;
+            }
+            input[value="Edit"]{
+                width : 90px;
+                height:30px;
+                font-size: 20px;
+                font-family: Consolas,sans-serif;
+            }
+        </style>
+        <div class="a">
+        <form class="tmp" action="{% url 'edit' name=name %}">
+            <input type="submit" value="Edit">
+        </form>
+        </div>
         {{val | markdownify }}
-    </body>
-</html>
+        {% endblock %}
+    <!-- </body>
+</html> -->

@@ -6,12 +6,12 @@
 
 {% block body %}
     <h1>All Pages</h1>
-
+    <br>
     <ul>
         {% for entry in entries %}
             <li><a href="/wiki/{{entry}}">{{ entry }}</a></li>
         {% empty %}
-            <h2>Not found</h2>
+            <p>Page not found</p>
 
         {% endfor %}
     </ul>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>New Page</title>
+        <style>    
+           input,textarea{
+                display: block;
+            }
+            label{
+                font-family: Consolas,sans-serif;
+                font-size:15px;
+                font-weight: bold;
+            }
+            input[type="submit"]{
+                position:relative;
+                left:740px;
+                top:20px;
+                height: 30px;
+                width: 90px;
+                font-size: 20px;
+            }
+            textarea{
+                width :740px;
+                height: 500px;
+                
+            }
+            input[value="Return"]{
+                position:relative;
+                left:740px;
+                top:40px;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <h2>{{ mess }}</h2>
+        <form action="{% url 'newpage' %}" method="POST">
+            {% csrf_token %}
+            <!-- {{ form.check.as_hidden }} -->
+            {{form}}
+             <input type="submit" value="Post">
+        </form>
+        <form action="/wiki/">
+            <input type="submit" value="Return">
+        </form>
+    </body>
+</html>
